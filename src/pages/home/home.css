@@ -1,0 +1,108 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main{
+  color: black;
+  text-align: center;
+}
+
+main > h1{
+  margin-top: 5vh;
+}
+
+main > h2{
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+}
+
+#cards{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.section_card{
+  height: 50vh;
+  width: 42vh;
+  background-color: rgb(130, 117, 0);
+  border-radius: 10px;
+  border: solid 5px darkblue;
+  margin-left: 6vh;
+  margin-right: 6vh;
+}
+
+.section_card > button{
+  margin-top: 1vh;
+  padding: 2vh;
+  background-color: darkblue;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.section_card > button:hover{
+  background-color: darkblue;
+  color: grey;
+  border-radius: 5px;
+  border: 2px solid grey;
+}
+
+@media (max-width: 900px){
+  #cards{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4vh;
+  }
+
+  .section_card{
+    width: 45vh;
+    margin: 2vh;
+  }
+}
+
+@media (max-width: 480px){
+  main > h1{
+    margin-top: 3vh;
+  }
+
+  main > h2{
+    margin-bottom: 3vh;
+  }
+
+  #cards{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section_card{
+    width: 38vh;
+    height: 55vh;
+    margin: 3vh 0;
+  }
+
+  .section_card > button{
+    padding: 2.5vh;
+    width: 80%;
+  }
+
+  .section_card > img{
+    width: 180px;
+  }
+}
+
+@media (max-width: 300px){
+  .section_card{
+    width: 32vh;
+    height: 58vh;
+    border-width: 3px;
+  }
+
+  .section_card > button{
+    padding: 3vh;
+    font-size: 0.9rem;
+  }
+}

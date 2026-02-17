@@ -1,0 +1,98 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header{
+  height: 10vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  width: 100%;
+  background-color: darkblue;
+  color: rgb(130, 117, 0);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+header h1{
+  margin-left: 12vh;
+  font-size: 3vh;
+}
+
+header > img{
+  margin-left: -5vh;
+  margin-top: 1vh;
+}
+
+#hamburguer_button{
+  background-color: darkblue;
+  border-radius: 5px;
+  margin-left: 5vh;
+  padding: 1vh;
+  border: none;
+}
+
+#hamburguer_button:hover{
+  background-color: darkblue;
+  cursor: pointer;
+}
+
+#carrinho_button{
+  background-color: darkblue;
+  border-radius: 5px;
+  padding: 1vh;
+  border: none;
+  margin-left: auto;
+  margin-right: 6vh;
+}
+
+#carrinho_button:hover{
+  background-color: darkblue;
+  cursor: pointer;
+}
+
+@media (max-width: 900px){
+  header h1{
+    font-size: 2.5vh;
+    margin-left: 3vh;
+  }
+
+  #hamburguer_button{
+    margin-left: 3vh;
+  }
+}
+
+@media (max-width: 480px){
+  header{
+    height: 12vh;
+  }
+
+  header h1{
+    margin: 0;
+    width: 100%;
+    font-size: 2.3vh;
+  }
+
+  #hamburguer_button,
+  #carrinho_button{
+    margin: 1vh;
+    padding: 1.5vh;
+  }
+}
+
+@media (max-width: 300px){
+  header{
+    height: 14vh;
+  }
+
+  header h1{
+    font-size: 2vh;
+  }
+
+  #hamburguer_button,
+  #carrinho_button{
+    padding: 2vh;
+  }
+}

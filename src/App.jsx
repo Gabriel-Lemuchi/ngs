@@ -1,0 +1,109 @@
+import React, { useState } from 'react';
+import { Routes, Route, useLocation} from 'react-router-dom';
+import Header from './components/header/header';
+import Sidebar from './components/sidebar/sidebar';
+import Cart from './components/cart/cart';
+import Home from './pages/home/home';
+import Torcedor from './pages/torcedor/torcedor';
+import Infantil from './pages/infantil/infantil';
+import Jogador from './pages/jogador/jogador';
+import Retro from './pages/retro/retro';
+import ProductDetail from './pages/productDetail/productDetail';
+import Payment from "./pages/payment/payment";
+import './App.css';
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  const location = useLocation();
+
+  function toggleMenu() {
+    setMenuOpen(prev => !prev);
+  }
+
+  function toggleCart() {
+    setCartOpen(prev => !prev);
+  }
+
+  function addToCart(product) {
+    setCartItems(prev => {
+      const itemExists = prev.find(item => item.id === product.id);
+
+      if (itemExists) {
+        return prev.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + product.quantity }
+            : item
+        );
+      }
+
+      return [...prev, product];
+    });
+
+    setCartOpen(true);
+  }
+
+  function increase(id) {
+    setCartItems(items =>
+      items.map(item =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      )
+    );
+  }
+
+  function decrease(id) {
+    setCartItems(items =>
+      items
+        .map(item =>
+          item.id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter(item => item.quantity > 0)
+    );
+  }
+
+  const total = cartItems.reduce(
+    (sum, item) => sum + Number(item.preco) * item.quantity,
+    0
+  );
+
+  return (
+    <>
+    <Header
+      toggleMenu={toggleMenu}
+      toggleCart={toggleCart}
+    />
+
+  <Sidebar menuOpen={menuOpen} />
+
+    <Cart
+      cartOpen={cartOpen}
+      cartItems={cartItems}
+      increase={increase}
+      decrease={decrease}
+      total={total}
+    />
+
+
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/torcedor" element={<Torcedor />} />
+    <Route path="/jogador" element={<Jogador />} />
+    <Route path="/Infantil" element={<Infantil />} />
+    <Route path="/retro" element={<Retro />} />
+    <Route
+      path="/produto/:id"
+      element={<ProductDetail addToCart={addToCart} />}
+    />
+    <Route path="/payment" element={<Payment cartItems={cartItems} total={total} />} />
+    </Routes>
+  </>
+  );
+}
+
+export default App;
