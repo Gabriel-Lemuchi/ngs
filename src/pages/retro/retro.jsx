@@ -1,22 +1,25 @@
 import React from "react";
 import CardProduto from "../../components/cardProduto/cardProduto";
 import "./retro.css"
-import camisas from "../../data/retro.json";
+import produtos from "../../data/products";
 
 const Retro = () => {
+
+  const camisasRetro = produtos.filter(
+    produto => produto.categoria === "retro"
+  );
+
   return (
-    <>
-      <div className="produtos">
+    <div className="produtos">
       <h2>Camisas do Futebol Retrô:</h2>
 
       <div className="lista-produtos">
-        {camisas.map((camisa) => (
-          <CardProduto key={camisa.name} produto={camisa} />
+        {camisasRetro.map((camisa) => (
+          <CardProduto key={camisa.slug} produto={camisa} />
         ))}
       </div>
-      </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Retro;

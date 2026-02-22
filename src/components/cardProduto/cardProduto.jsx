@@ -8,7 +8,7 @@ const CardProduto = ({ produto }) => {
 
   return (
     <>
-      <div className="card_product" onClick={() => navigate(`/produto/${produto.id}`)}>
+      <div className="card_product" onClick={() => navigate(`/produto/${produto.slug}`)}>
         <img src={produto.img} alt={produto.name} />
         <h3>{produto.name}</h3>
         <span>R$ {produto.price}</span>

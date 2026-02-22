@@ -29,11 +29,11 @@ function App() {
 
   function addToCart(product) {
     setCartItems(prev => {
-      const itemExists = prev.find(item => item.id === product.id);
+      const itemExists = prev.find(item => item.name === product.name);
 
       if (itemExists) {
         return prev.map(item =>
-          item.id === product.id
+          item.name === product.name
             ? { ...item, quantity: item.quantity + product.quantity }
             : item
         );
@@ -45,21 +45,21 @@ function App() {
     setCartOpen(true);
   }
 
-  function increase(id) {
+  function increase(name) {
     setCartItems(items =>
       items.map(item =>
-        item.id === id
+        item.name === name
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
   }
 
-  function decrease(id) {
+  function decrease(name) {
     setCartItems(items =>
       items
         .map(item =>
-          item.id === id
+          item.name === name
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
@@ -68,7 +68,7 @@ function App() {
   }
 
   const total = cartItems.reduce(
-    (sum, item) => sum + Number(item.preco) * item.quantity,
+    (sum, item) => sum + Number(item.price) * item.quantity,
     0
   );
 
@@ -97,7 +97,7 @@ function App() {
     <Route path="/Infantil" element={<Infantil />} />
     <Route path="/retro" element={<Retro />} />
     <Route
-      path="/produto/:id"
+      path="/produto/:slug"
       element={<ProductDetail addToCart={addToCart} />}
     />
     <Route path="/payment" element={<Payment cartItems={cartItems} total={total} />} />

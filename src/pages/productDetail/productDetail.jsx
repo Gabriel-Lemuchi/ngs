@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./productDetail.css";
+import produtos from "../../data/products";
 
 const ProductDetail = ({ addToCart }) => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [quantity, setQuantity] = useState(1);
 
-  const produto = produtos.find(p => p.id === id);
+  const produto = produtos.find(p => p.slug === slug);
 
   if (!produto) {
     return <h2>Produto não encontrado</h2>;
   }
 
-  const total = produto.preco * quantity;
+  const total = produto.price * quantity;
 
   function increase() {
     setQuantity(q => q + 1);
@@ -32,10 +33,9 @@ const ProductDetail = ({ addToCart }) => {
   return (
     <div className="product-detail">
       <div id="details">
-        <img src={produto.imagem} alt={produto.name} width="320px" />
+        <img src={produto.img} alt={produto.name} width="320px" />
         <h1>{produto.name}</h1>
-        <p>{produto.descriçao}</p>
-        <strong>R$ {produto.preco.toFixed(2)}</strong>
+        <strong>R$ {produto.price.toFixed(2)}</strong>
       </div>
 
       <div id="add_cart_section">
