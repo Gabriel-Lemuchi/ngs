@@ -1,21 +1,25 @@
 import React from "react";
 import CardProduto from "../../components/cardProduto/cardProduto";
 import "./infantil.css"
+import produtos from "../../data/products";
 
 const Infantil = () => {
+
+  const camisasInfantis = produtos.filter(
+    produto => produto.categoria === "infantil"
+  );
+
   return (
-    <>
-      <div className="produtos">
+    <div className="produtos">
       <h2>Camisas Infantis:</h2>
 
       <div className="lista-produtos">
-        {camisas.map((camisa) => (
-          <CardProduto key={camisa.id} produto={camisa} />
+        {camisasInfantis.map((camisa) => (
+          <CardProduto key={camisa.slug} produto={camisa} />
         ))}
       </div>
-      </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Infantil;
