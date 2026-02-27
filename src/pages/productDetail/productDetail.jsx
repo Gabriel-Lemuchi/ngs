@@ -5,6 +5,7 @@ import produtos from "../../data/products";
 
 const ProductDetail = ({ addToCart }) => {
   const { slug } = useParams();
+  const [size, setSize] = useState("");
   const [quantity, setQuantity] = useState(1);
 
   const produto = produtos.find(p => p.slug === slug);
@@ -15,6 +16,13 @@ const ProductDetail = ({ addToCart }) => {
 
   const total = produto.price * quantity;
 
+  const sizes = produto.variants
+  ? produto.variants
+      .split("\n")
+      .map(s => s.trim())
+      .filter(s => ["P","M","G","GG","2XL","3XL"].includes(s))
+  : [];
+
   function increase() {
     setQuantity(q => q + 1);
   }
@@ -24,9 +32,15 @@ const ProductDetail = ({ addToCart }) => {
   }
 
   function handleAddToCart() {
+    if (!size) {
+      alert("Selecione um tamanho");
+      return;
+    }
+
     addToCart({
       ...produto,
-      quantity
+      quantity,
+      size
     });
   }
 
@@ -36,6 +50,7 @@ const ProductDetail = ({ addToCart }) => {
         <img src={produto.img} alt={produto.name} width="320px" />
         <h1>{produto.name}</h1>
         <strong>R$ {produto.price.toFixed(2)}</strong>
+
       </div>
 
       <div id="add_cart_section">
@@ -51,15 +66,22 @@ const ProductDetail = ({ addToCart }) => {
           Valor total: <b>R$ {total.toFixed(2)}</b>
         </p>
 
+
+        <div style={{ margin: "15px 0" }}>
+          <p>Escolha o tamanho:</p>
+
+          <select value={size} onChange={(e) => setSize(e.target.value)}>
+          <option value="">Selecione</option>
+          {sizes.map(t => (
+          <option key={t} value={t}>{t}</option>
+          ))}
+          </select>
+        </div>
+
         <button id="add_cart" onClick={handleAddToCart}>
           <b>Adicionar ao Carrinho</b>
         </button>
 
-        <div id="addictional_text">
-          <p>✔ Produto oficial licenciado</p>
-          <p>✔ Envio em até 72h</p>
-          <p>✔ Troca grátis em 7 dias</p>
-        </div>
       </div>
     </div>
   );

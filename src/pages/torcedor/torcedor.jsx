@@ -3,11 +3,14 @@ import CardProduto from "../../components/cardProduto/cardProduto";
 import "./torcedor.css"
 import produtos from "../../data/products";
 
-const Torcedor = () => {
+const Torcedor = ({search}) => {
 
-  const camisasTorcedor = produtos.filter(
-    produto => produto.categoria === "torcedor"
-  );
+  const camisasTorcedor = produtos
+    .filter(produto => produto.categoria === "torcedor")
+    .filter(produto =>
+      produto.name.toLowerCase().includes(search.toLowerCase())
+    );
+
 
   return (
     <div className="produtos">

@@ -18,13 +18,13 @@ const Cart = ({ cartOpen, cartItems, increase, decrease, total }) => {
 
       {cartItems.map(item => (
         <div key={item.id} className="cart-item">
-          <img src={item.imagem} alt={item.name} width="80px"/>
+          <img src={item.img} alt={item.name} width="80px"/>
 
           <div className="cart-info">
             <h4>{item.name}</h4>
             <p>
               <b>
-                R$ {(item.preco * item.quantity).toFixed(2)}
+                R$ {(item.price * item.quantity).toFixed(2)}
               </b>
             </p>
 
@@ -40,7 +40,7 @@ const Cart = ({ cartOpen, cartItems, increase, decrease, total }) => {
       {cartItems.length > 0 && (
         <div className="cart-total">
           <h3>Total: R$ {total.toFixed(2)}</h3>
-          <button className="checkout-btn" onClick={() => navigate(`/signup`)}>Finalizar compra</button>
+          <button className="checkout-btn" onClick={() => navigate(`/payment`)}>Finalizar compra</button>
         </div>
       )}
     </aside>

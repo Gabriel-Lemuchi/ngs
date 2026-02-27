@@ -16,6 +16,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [search, setSearch] = useState("");
 
   const location = useLocation();
 
@@ -77,6 +78,8 @@ function App() {
     <Header
       toggleMenu={toggleMenu}
       toggleCart={toggleCart}
+      search={search}
+      setSearch={setSearch}
     />
 
   <Sidebar menuOpen={menuOpen} />
@@ -92,10 +95,10 @@ function App() {
 
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/torcedor" element={<Torcedor />} />
-    <Route path="/jogador" element={<Jogador />} />
-    <Route path="/Infantil" element={<Infantil />} />
-    <Route path="/retro" element={<Retro />} />
+    <Route path="/torcedor" element={<Torcedor search={search} />} />
+    <Route path="/jogador" element={<Jogador search={search} />} />
+    <Route path="/infantil" element={<Infantil search={search} />} />
+    <Route path="/retro" element={<Retro search={search} />} />
     <Route
       path="/produto/:slug"
       element={<ProductDetail addToCart={addToCart} />}
