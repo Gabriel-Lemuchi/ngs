@@ -17,11 +17,11 @@ const Infantil = ({search , setSearch}) => {
       <h2>Camisas Infantis:</h2>
 
       <input
+        className="busca"
         type="text"
         placeholder="Buscar camisa..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{ padding: "5px", borderRadius: "5px", width: "400px", marginTop: "2vh", backgroundColor: "rgb(173, 173, 173)", color:"black", border:"solid 2px blue"}}
       />
 
       <div className="lista-produtos">

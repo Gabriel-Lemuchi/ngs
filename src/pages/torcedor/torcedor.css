@@ -8,6 +8,16 @@
   font-size: 3vh;
 }
 
+.busca {
+  padding: 5px;
+  border-radius: 5px;
+  width: 500px;
+  margin-top: 2vh;
+  background-color: rgb(173, 173, 173);
+  color: black;
+  border: solid 2px blue;
+}
+
 .lista-produtos{
   display: flex;
   flex-wrap: wrap;
@@ -39,6 +49,10 @@
   .produtos h2{
     font-size: 2.4vh;
     margin-bottom: 2vh;
+  }
+
+  .busca{
+    width: 200px;
   }
 
   .lista-produtos{
