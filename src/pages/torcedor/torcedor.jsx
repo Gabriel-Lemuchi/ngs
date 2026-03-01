@@ -3,7 +3,7 @@ import CardProduto from "../../components/cardProduto/cardProduto";
 import "./torcedor.css"
 import produtos from "../../data/products";
 
-const Torcedor = ({search}) => {
+const Torcedor = ({search, setSearch}) => {
 
   const camisasTorcedor = produtos
     .filter(produto => produto.categoria === "torcedor")
@@ -15,6 +15,15 @@ const Torcedor = ({search}) => {
   return (
     <div className="produtos">
       <h2>Camisas Versão Torcedor:</h2>
+
+
+      <input
+        type="text"
+        placeholder="Buscar camisa..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{ padding: "5px", borderRadius: "5px" }}
+      />
 
       <div className="lista-produtos">
         {camisasTorcedor.map((camisa) => (

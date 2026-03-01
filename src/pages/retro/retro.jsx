@@ -3,7 +3,7 @@ import CardProduto from "../../components/cardProduto/cardProduto";
 import "./retro.css"
 import produtos from "../../data/products";
 
-const Retro = ({ search }) => {
+const Retro = ({ search , setSearch}) => {
 
   const camisasRetro = produtos
     .filter(produto => produto.categoria === "retro")
@@ -13,7 +13,17 @@ const Retro = ({ search }) => {
 
   return (
     <div className="produtos">
+
       <h2>Camisas do Futebol Retrô:</h2>
+
+      <input
+        type="text"
+        placeholder="Buscar camisa..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{ padding: "5px", borderRadius: "5px" }}
+      />
+
       <div className="lista-produtos">
         {camisasRetro.map(camisa => (
           <CardProduto key={camisa.slug} produto={camisa} />

@@ -3,7 +3,7 @@ import CardProduto from "../../components/cardProduto/cardProduto";
 import "./infantil.css"
 import produtos from "../../data/products";
 
-const Infantil = ({search}) => {
+const Infantil = ({search , setSearch}) => {
 
   const camisasInfantis = produtos
     .filter(produto => produto.categoria === "infantil")
@@ -13,7 +13,17 @@ const Infantil = ({search}) => {
 
   return (
     <div className="produtos">
+
       <h2>Camisas Infantis:</h2>
+
+
+      <input
+        type="text"
+        placeholder="Buscar camisa..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{ padding: "5px", borderRadius: "5px" }}
+      />
 
       <div className="lista-produtos">
         {camisasInfantis.map((camisa) => (
