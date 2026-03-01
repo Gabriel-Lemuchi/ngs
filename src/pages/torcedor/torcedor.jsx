@@ -18,6 +18,7 @@ const Torcedor = ({search, setSearch}) => {
 
 
       <input
+        className="busca"
         type="text"
         placeholder="Buscar camisa..."
         value={search}

@@ -17,6 +17,7 @@ const Retro = ({ search , setSearch}) => {
       <h2>Camisas do Futebol Retrô:</h2>
 
       <input
+        className="busca"
         type="text"
         placeholder="Buscar camisa..."
         value={search}

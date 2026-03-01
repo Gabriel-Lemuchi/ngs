@@ -18,6 +18,7 @@ const Jogador = ({search, setSearch}) => {
 
       <input
         type="text"
+        className="busca"
         placeholder="Buscar camisa..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
