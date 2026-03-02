@@ -13,7 +13,7 @@ const Home = () => {
       <div id="cards">
         <div className="section_card">
           <h2>Camisas de Torcedor</h2>
-          <img src="" alt="" width="220px"/>
+          <img src="images/camisa_torcedor.webp" alt="" width="210px"/>
           <button onClick={() => navigate("/torcedor")}>
             Ver uniformes
           </button>
@@ -21,15 +21,15 @@ const Home = () => {
 
         <div className="section_card">
           <h2>Camisas de Jogador</h2>
-          <img src="" alt="" width="220px"/>
-          <button onClick={() => navigate("/torcedor")}>
+          <img src="images/camisa_jogador.webp" alt="" width="210px"/>
+          <button onClick={() => navigate("/jogador")}>
             Ver uniformes
           </button>
         </div>
 
         <div className="section_card">
           <h2>Camisas Infantis</h2>
-          <img src="" alt="" width="220px"/>
+          <img src="images/camisa_infantil.webp" alt="" width="185px"/>
           <button onClick={() => navigate("/infantil")}>
             Ver uniformes
           </button>
@@ -37,7 +37,7 @@ const Home = () => {
 
         <div className="section_card">
           <h2>Camisas Retrô</h2>
-          <img src="" alt="" width="220px"/>
+          <img src="images/camisa_retro.webp" alt="" width="210px"/>
           <button onClick={() => navigate("/retro")}>
             Ver uniformes
           </button>
