@@ -43,6 +43,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <h3>Na primeira compra, você consegue um desconto de 10%!!!!</h3>
     </main>
   );
 };
