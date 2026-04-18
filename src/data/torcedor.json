@@ -1,6 +1,23 @@
 [
   {
     "href": "https://acdn-us.mitiendanube.com/stores/003/871/953/products/design-sem-nome-20-28805f2a54d58465ad17193226880087-1024-1024.webp",
+    "img": "/images/brasil_2026_titular.jpeg",
+    "name": "Camisa da Seleção Brasileira 2026 Titular ",
+    "price": 179.99,
+    "variants": "Tamanho: P\nP\n \nM\n \nG\n \nGG\n \n2GG\n \n3GG",
+    "item": "https://www.xingsundrop.com.br/produtos/camisa-nike-versao-jogador-corintiano-ii-24-25-preto/"
+  },
+  {
+    "href": "https://acdn-us.mitiendanube.com/stores/003/871/953/products/design-sem-nome-20-28805f2a54d58465ad17193226880087-1024-1024.webp",
+    "img": "/images/brasil_2026_reserva.jpeg",
+    "name": "Camisa da Seleção Brasileira 2026 Reserva",
+    "price": 179.99,
+    "variants": "Tamanho: P\nP\n \nM\n \nG\n \nGG\n \n2GG\n \n3GG",
+    "item": "https://www.xingsundrop.com.br/produtos/camisa-nike-versao-jogador-corintiano-ii-24-25-preto/"
+
+  },
+  {
+    "href": "https://acdn-us.mitiendanube.com/stores/003/871/953/products/design-sem-nome-20-28805f2a54d58465ad17193226880087-1024-1024.webp",
     "img": "https://acdn-us.mitiendanube.com/stores/003/871/953/products/design-sem-nome-20-28805f2a54d58465ad17193226880087-480-0.webp",
     "name": "Camisa Nike Versão Jogador Corintiano II 24/25 - Preto",
     "price": 179.99,
