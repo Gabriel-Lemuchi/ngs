@@ -55,7 +55,7 @@ const ProductDetail = ({ addToCart }) => {
 
     addToCart({
       ...produto,
-      price: precoFinal, // 🔥 preço correto indo pro carrinho
+      price: precoFinal, 
       quantity,
       size
     });
@@ -73,7 +73,7 @@ const ProductDetail = ({ addToCart }) => {
               <span style={{ textDecoration: "line-through", marginRight: "8px" }}>
                 R$ {produto.price.toFixed(2)}
               </span>
-              <span style={{ color: "limegreen" }}>
+              <span style={{ color: "black" }}>
                 R$ {precoFinal.toFixed(2)}
               </span>
             </>
