@@ -1,0 +1,54 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#menu{
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  width: 5%;
+  height: calc(100vh - 10vh);
+  background-color: rgba(183, 168, 40, 0.87);
+}
+
+.menu-button{
+  height: 25%;
+  width: 100%;
+  background-color: rgba(183, 168, 40, 0.87);
+  color: black;
+  border: none;
+}
+
+.menu-button:hover{
+  background-color: rgba(156, 140, 0, 0.87);
+  cursor: pointer;
+}
+
+@media (max-width: 900px){
+  #menu{
+    width: 10%;
+  }
+}
+
+@media (max-width: 480px){
+  #menu{
+    width: 100%;
+    height: 16vh;
+    top: auto;
+    bottom: 0;
+    display: flex;
+  }
+
+  .menu-button{
+    height: 100%;
+    width: 25%;
+  }
+}
+
+@media (max-width: 300px){
+  .menu-button{
+    font-size: 1.6vh;
+  }
+}
