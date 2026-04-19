@@ -39,7 +39,7 @@ ${message}
 Total: R$ ${total.toFixed(2)}
 `;
 
-    const url = `https://wa.me/554199184374?text=${encodeURIComponent(finalMessage)}`;
+    const url = `https://wa.me/5514988267058?text=${encodeURIComponent(finalMessage)}`;
 
     window.open(url, "_blank");
 
