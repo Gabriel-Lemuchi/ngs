@@ -68,7 +68,7 @@ main > h2{
   }
 }
 
-@media (max-width: 480px){
+@media (max-width: 520px){
   main > h1{
     margin-top: 3vh;
   }
@@ -85,7 +85,7 @@ main > h2{
   .section_card{
     width: 38vh;
     height: 55vh;
-    margin: auto;
+    margin: 0 auto;
   }
 
   .section_card > button{
