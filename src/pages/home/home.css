@@ -24,7 +24,7 @@ main > h2{
   gap: 2rem;
   padding: 2rem;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .section_card{
@@ -85,7 +85,7 @@ main > h2{
   .section_card{
     width: 38vh;
     height: 55vh;
-    margin: 3vh 0;
+    margin: auto;
   }
 
   .section_card > button{
