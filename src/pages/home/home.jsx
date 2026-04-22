@@ -11,6 +11,17 @@ const Home = () => {
       <h2>Confira nossas camisas por um ótimo preço:</h2>
 
       <div id="cards">
+
+      <div className="section_card" id="hero_card">
+        <span className="badge">⚡ Envio imediato</span>
+        <h2>Pronta Entrega</h2>
+        <img src="images/camisa_pronta_entrega.webp" alt="" width="210px"/>
+        <button onClick={() => navigate("/pronta-entrega")}>
+          Ver uniformes
+        </button>
+      </div>
+
+
         <div className="section_card">
           <h2>Camisas de Torcedor</h2>
           <img src="images/camisa_torcedor.webp" alt="" width="210px"/>
@@ -42,6 +53,7 @@ const Home = () => {
             Ver uniformes
           </button>
         </div>
+
       </div>
     </main>
   );

@@ -11,6 +11,7 @@ import Retro from './pages/retro/retro';
 import ProductDetail from './pages/productDetail/productDetail';
 import Payment from "./pages/payment/payment";
 import './App.css';
+import Pronta from './pages/pronta-entrega/pronta-entrega';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -97,6 +98,7 @@ function App() {
     <Route path="/jogador" element={<Jogador search={search} setSearch={setSearch}/>} />
     <Route path="/infantil" element={<Infantil search={search} setSearch={setSearch}/>} />
     <Route path="/retro" element={<Retro search={search} setSearch={setSearch}/>} />
+    <Route path="/pronta-entrega" element={<Pronta search={search} setSearch={setSearch}/>} />
     <Route
       path="/produto/:slug"
       element={<ProductDetail addToCart={addToCart} />}

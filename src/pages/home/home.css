@@ -10,12 +10,12 @@ main{
 }
 
 main > h1{
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 main > h2{
   margin-top: 2vh;
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 }
 
 #cards{
@@ -55,6 +55,43 @@ main > h2{
   border: 2px solid grey;
 }
 
+#hero_card {
+  background: linear-gradient(135deg, #0a0a7a, #1e1ec9);
+  color: white;
+  position: relative;
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ffcc00;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+#hero_card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+#hero_card button {
+  background-color: #ffcc00;
+  color: black;
+  font-weight: bold;
+}
+
+#hero_card button:hover {
+  background-color: white;
+  color: #0a0a7a;
+}
+
 @media (max-width: 900px){
   #cards{
     flex-wrap: wrap;
@@ -65,6 +102,9 @@ main > h2{
   .section_card{
     width: 45vh;
     margin: 2vh;
+  }
+    #hero_card {
+    grid-column: span 1;
   }
 }
 
